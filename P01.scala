@@ -6,7 +6,7 @@ res0: Int = 8
 */
 object Solution {
 
-    def lastBuiltin(ls : List[Int]): Int = ls.last
+    def lastBuiltin[A](ls : List[Int]): A = ls.last
     def lastRecursive[A](ls : List[A]): A = ls match{
         case h :: Nil  => h
         case _ :: tail => lastRecursive(tail)
