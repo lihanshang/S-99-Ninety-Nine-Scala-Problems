@@ -14,6 +14,15 @@ object Solution {
         case h :: tail => h :: compressRecursive(tail.dropWhile(_ == h))
     }
 
+    def compressRecursive_pack[A](ls: List[A]): List[A] = {
+        if(ls.isEmpty) ls
+        else{
+            val (packed, next) = ls span(_ == ls.head)
+            if(next == Nil) List(packed.head)
+            else packed.head :: compressRecursive_pack(next)
+        }
+    }
+    
     // Tail recursive.
     def compressTailRecursive[A](ls: List[A]): List[A] = {
         def compressR(result: List[A], curList: List[A]): List[A] = curList match {
