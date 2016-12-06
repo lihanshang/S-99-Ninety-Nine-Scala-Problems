@@ -6,13 +6,9 @@ res0: Boolean = true
 
 object Solution {
 
+    lazy val primes = 2 #:: Stream.from(3, 2).filter(isPrime)
+    def isPrime(n: Int): Boolean = primes.takeWhile(p => p * p <= n).forall(n % _ != 0)
 
-    def main(args: Array[String]): Unit = {
-
-        lazy val primes = 2 #:: Stream.from(3, 2).filter(isPrime)
-        def isPrime(n: Int): Boolean = primes.takeWhile(p => p * p <= n).forall(n % _ != 0)
-
-    }
 }
 /*
 def takeWhile(p: (A) ⇒ Boolean): Stream[A]
