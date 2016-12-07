@@ -1,6 +1,3 @@
-import java.lang
-import java.lang.System
-
 /*
 P32 (**) Determine the greatest common divisor of two positive integer numbers.
 Use Euclid's algorithm.
